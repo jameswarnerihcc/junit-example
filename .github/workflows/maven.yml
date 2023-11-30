@@ -4,6 +4,12 @@ on:
   push:
   workflow_dispatch:
 
+# Permissions required for test-reporter https://github.com/dorny/test-reporter
+permissions:
+  id-token: write
+  contents: read
+  checks: write
+
 jobs:
   build:
 
