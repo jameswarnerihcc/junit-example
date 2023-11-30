@@ -31,6 +31,12 @@ jobs:
       - name: Test
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
 
+      - name: Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with:
+          name: testResults
+          path: /home/runner/work/junit-example/junit-example/target/surefire-reports
+
       - name: Report
         uses: dorny/test-reporter@v1
         if: always()
